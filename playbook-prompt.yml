@@ -1,0 +1,19 @@
+---
+- name: How to prompt variables
+  hosts: localhost
+  gather_facts: no
+
+  vars_prompt:
+          - name: "yourpassword" #varible name
+            prompt: "What is your password?"
+            private: yes
+            #  encrypt: "sha512_crypt"
+            confirm: yes
+            salt_size: 7
+            default: "qwerty"
+            log_path: /home/student/ansible.log
+
+  tasks:
+          - name: Print the password
+            debug:
+                   msg: "{{ yourpassword }}"
