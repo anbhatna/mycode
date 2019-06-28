@@ -1,0 +1,11 @@
+[aristaswitchessource]
+sw1 ansible_host=172.16.1.20
+sw2 ansible_host=172.16.2.20
+
+[aristaswitchessource:vars]
+ansible_network_os=eos
+ansible_connection=network_cli
+ansible_become=yes
+ansible_become_method=enable
+ansible_user=admin
+ansible_ssh_pass=alta3

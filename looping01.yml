@@ -1,0 +1,24 @@
+---
+ - hosts: localhost
+   gather_facts: false
+
+   vars:
+           basket:
+                   - sandwich
+                   - bread
+                   - cheese
+   tasks:
+           - name: Learning about with_items (old way to loop)
+             debug:
+                     msg: "Using debug we can print --> {{ item }}"
+             with_items:
+                     - "Apple"
+                     - "Blueberry"
+                     - "Cantalope"
+                     - "Dragonfruit"
+
+           - name: Learning about loop keyword
+             debug:
+                     msg: "Printing-----------> {{ item }}"
+             loop:
+                     "{{ basket }}"

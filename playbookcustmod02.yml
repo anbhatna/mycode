@@ -1,0 +1,16 @@
+---
+- name: Using oure new module
+  hosts: localhost
+
+  tasks:
+          - name: Hughes Module Design
+            my_new_test_module02:
+                    name: Larry
+                    new: False
+                    turtle01: Pinky
+            register: results
+
+          - name: What is in results?
+            debug:
+                    var: results
+
